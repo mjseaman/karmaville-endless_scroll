@@ -11,9 +11,6 @@ namespace :db do
   task :sum_karma => :environment do
     User.all.each do |user|
       user.update_attribute(:karma_sum, user.total_karma) # this doesn't run validations
-      # user.karma_sum = user.total_karma
-      p "User #{user.id}, karma #{user.total_karma}" if user.id%1000 == 0
-      # user.save
     end
   end
 end

@@ -10,3 +10,13 @@
     <%= render 'user_row', :user => user %>
   <% end %>
 </table>
+
+<ul class="pager">
+  <% unless @page == 1 %>
+  <li><a href="/?page=<%= @page - 1 %>">Previous</a></li>
+  <% end %>
+
+  <% unless @page >= num_pages %>
+  <li><a href="/?page=<%= @page + 1 %>">Next</a></li>
+  <% end %>
+</ul>
